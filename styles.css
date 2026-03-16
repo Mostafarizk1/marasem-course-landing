@@ -39,15 +39,7 @@ body {
 
 /* ===== Cursor Glow ===== */
 .cursor-glow {
-    position: fixed;
-    width: 300px;
-    height: 300px;
-    background: radial-gradient(circle, rgba(201,162,39,0.08) 0%, transparent 70%);
-    border-radius: 50%;
-    pointer-events: none;
-    z-index: 9999;
-    transform: translate(-50%, -50%);
-    transition: opacity 0.3s;
+    display: none;
 }
 
 /* ===== WhatsApp Float ===== */
@@ -997,6 +989,12 @@ section { padding: 120px 0; }
     font-weight: 700;
 }
 
+.pricing-ribbon-left {
+    right: auto;
+    left: -35px;
+    transform: rotate(-45deg);
+}
+
 .pricing-header {
     padding: 30px;
     background: var(--charcoal);
@@ -1261,12 +1259,41 @@ section { padding: 120px 0; }
     .contact-numbers .divider { display: none; }
 }
 
-/* ===== 3-Video Grid ===== */
+/* ===== 3-Video Grid (legacy) ===== */
 .videos-grid-3 {
     display: grid;
     grid-template-columns: 1.2fr 0.9fr 0.9fr;
     gap: 16px;
     align-items: start;
+}
+
+/* ===== New Video Grid: 2 vertical | 2 horizontal ===== */
+.videos-grid-new {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 16px;
+    align-items: start;
+}
+
+.videos-vertical-pair {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.videos-horizontal-pair {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+@media (max-width: 900px) {
+    .videos-grid-new {
+        grid-template-columns: 1fr;
+    }
+    .videos-vertical-pair {
+        grid-template-columns: 1fr 1fr;
+    }
 }
 
 .videos-grid-3 .video-frame {
@@ -1343,7 +1370,7 @@ section { padding: 120px 0; }
 }
 
 .detailed-list li::before {
-    content: '▸';
+    content: '◂';
     position: absolute;
     right: 0;
     color: var(--gold);
@@ -1444,21 +1471,24 @@ section { padding: 120px 0; }
     align-items: center;
     gap: 10px;
     padding: 12px 20px;
-    background: rgba(201,162,39,0.1);
-    border: 1px solid rgba(201,162,39,0.3);
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.35);
     border-radius: 50px;
-    color: var(--gold);
+    color: #ffffff;
     font-size: 0.95rem;
     font-weight: 600;
     transition: all 0.3s ease;
+    backdrop-filter: blur(4px);
 }
 
 .hero-feature:hover {
-    background: rgba(201,162,39,0.2);
+    background: rgba(255,255,255,0.22);
     transform: translateY(-3px);
+    border-color: rgba(255,255,255,0.6);
 }
 
 .hero-feature i {
+    color: var(--gold);
     font-size: 1.1rem;
 }
 

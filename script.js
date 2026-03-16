@@ -1,14 +1,6 @@
 // ===== LUXURY LANDING PAGE - JavaScript =====
 document.addEventListener('DOMContentLoaded', function() {
     
-    // ===== Cursor Glow Effect =====
-    const cursorGlow = document.querySelector('.cursor-glow');
-    if (cursorGlow && window.innerWidth > 768) {
-        document.addEventListener('mousemove', (e) => {
-            cursorGlow.style.left = e.clientX + 'px';
-            cursorGlow.style.top = e.clientY + 'px';
-        });
-    }
     
     // ===== Reveal Animations =====
     const revealElements = document.querySelectorAll('.reveal-up, .reveal-left, .reveal-right');
