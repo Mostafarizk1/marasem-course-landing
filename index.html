@@ -5,26 +5,71 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>كورس المونتاج العقاري | أكاديمية مراسم</title>
     <meta name="description" content="تعلم فن إنتاج الفيديوهات العقارية الاحترافية من الصفر حتى الاحتراف مع أكاديمية مراسم. كورس شامل في المونتاج العقاري باستخدام After Effects و Premiere Pro.">
-    <!-- DNS Prefetch & Preconnect for external resources -->
+    <!-- Preconnect for font origins -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
     <link rel="dns-prefetch" href="https://connect.facebook.net">
     <link rel="dns-prefetch" href="https://player.mediadelivery.net">
-    
-    <!-- Cairo Font: async load to avoid render-blocking -->
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+
+    <!-- Preload hero images for LCP -->
+    <link rel="preload" as="image" href="assets/hero-bg.webp" type="image/webp" media="(min-width: 768px)" fetchpriority="high">
+    <link rel="preload" as="image" href="assets/mobile.webp" type="image/webp" media="(max-width: 767px)" fetchpriority="high">
+
+    <!-- Critical CSS: inlined to eliminate render-blocking -->
+    <style>
+    :root{--black-royal:#0a0a0a;--black-rich:#111111;--black-soft:#1a1a1a;--charcoal:#2a2a2a;--charcoal-light:#3a3a3a;--gray-dark:#4a4a4a;--gray:#6a6a6a;--gray-light:#8a8a8a;--gold:#c9a227;--gold-light:#dbb84d;--gold-dark:#a68520;--white:#ffffff;--white-off:#f5f5f5;--danger:#8b0000;--whatsapp:#25d366;--gradient-gold:linear-gradient(135deg,var(--gold) 0%,var(--gold-light) 50%,var(--gold) 100%);--gradient-dark:linear-gradient(180deg,var(--black-royal) 0%,var(--black-rich) 100%);--shadow-sm:0 2px 10px rgba(0,0,0,.3);--shadow-md:0 8px 30px rgba(0,0,0,.4);--shadow-lg:0 20px 60px rgba(0,0,0,.5);--shadow-gold:0 0 40px rgba(201,162,39,.3)}
+    *{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+    body{font-family:'Cairo',sans-serif;background:var(--black-royal);color:var(--white);line-height:1.8;overflow-x:hidden}
+    .container{max-width:1200px;margin:0 auto;padding:0 24px}
+    .whatsapp-float{position:fixed;bottom:30px;left:30px;background:var(--whatsapp);color:#fff;width:60px;height:60px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:28px;box-shadow:0 4px 20px rgba(37,211,102,.4);z-index:1000;text-decoration:none;transition:all .3s ease}
+    .whatsapp-float:hover{transform:scale(1.1);box-shadow:0 6px 30px rgba(37,211,102,.6);width:auto;padding:0 20px;border-radius:30px}
+    .whatsapp-float .whatsapp-text{display:none;margin-right:10px;font-size:14px;font-weight:600}.whatsapp-float:hover .whatsapp-text{display:block}
+    .seats-badge{position:fixed;top:20px;left:20px;background:var(--danger);color:#fff;padding:10px 20px;border-radius:8px;display:flex;align-items:center;gap:10px;font-size:13px;font-weight:600;z-index:1000;border:1px solid rgba(255,255,255,.1)}
+    .seats-badge .pulse-ring{position:absolute;inset:0;border-radius:8px;border:2px solid var(--danger);animation:pulse-ring 2s infinite}
+    @keyframes pulse-ring{0%{transform:scale(1);opacity:1}100%{transform:scale(1.2);opacity:0}}
+    .hero{min-height:100vh;position:relative;display:flex;align-items:center;justify-content:center;text-align:center;padding:120px 20px;overflow:hidden}
+    .hero-bg{position:absolute;inset:0;overflow:hidden;filter:brightness(.5)}
+    .hero-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,10,10,.65) 0%,rgba(10,10,10,.5) 50%,rgba(10,10,10,.75) 100%)}
+    .hero-particles{position:absolute;inset:0;background-image:radial-gradient(circle at 20% 80%,rgba(201,162,39,.03) 0%,transparent 50%),radial-gradient(circle at 80% 20%,rgba(201,162,39,.03) 0%,transparent 50%)}
+    .hero-content{position:relative;z-index:2;max-width:800px}
+    .badge-limited{display:inline-flex;align-items:center;gap:10px;background:rgba(139,0,0,.3);border:1px solid var(--danger);color:#ff6b6b;padding:10px 24px;border-radius:50px;font-size:13px;font-weight:600;margin-bottom:30px;letter-spacing:.5px}
+    .badge-dot{width:8px;height:8px;background:#ff6b6b;border-radius:50%;animation:blink 1s infinite}
+    @keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+    .hero h1{font-size:clamp(2.5rem,7vw,4.5rem);font-weight:900;line-height:1.4;margin-bottom:24px;padding-bottom:10px}
+    .hero h1 .line{display:block}.hero h1 .highlight{background:var(--gradient-gold);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+    .hero-subtitle{font-size:1.2rem;color:var(--gray-light);margin-bottom:40px;font-weight:300;max-width:550px;margin-left:auto;margin-right:auto}
+    .hero-cta{margin-bottom:30px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;padding:16px 40px;border-radius:8px;font-size:1rem;font-weight:700;text-decoration:none;transition:all .4s ease;border:none;cursor:pointer;font-family:inherit;position:relative;overflow:hidden}
+    .btn-gold{background:var(--gradient-gold);color:var(--black-royal)}
+    .btn-gold .btn-content{position:relative;z-index:1;display:flex;align-items:center;gap:10px}
+    .btn-gold .btn-shine{position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.3),transparent);transition:left .6s ease}
+    .btn-gold:hover .btn-shine{left:100%}.btn-gold:hover{transform:translateY(-2px);box-shadow:var(--shadow-gold)}
+    .btn-large{padding:18px 50px;font-size:1.1rem}
+    .scroll-indicator{position:absolute;bottom:40px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:10px;color:var(--gray);font-size:12px}
+    .mouse{width:24px;height:40px;border:2px solid var(--gray);border-radius:12px;position:relative}
+    .wheel{width:4px;height:8px;background:var(--gold);border-radius:2px;position:absolute;top:8px;left:50%;transform:translateX(-50%);animation:scroll-wheel 2s infinite}
+    @keyframes scroll-wheel{0%,100%{opacity:1;top:8px}50%{opacity:.3;top:20px}}
+    .hero-features{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-bottom:32px;max-width:700px;margin-left:auto;margin-right:auto}
+    .hero-feature{display:flex;align-items:center;gap:10px;padding:12px 20px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.35);border-radius:50px;color:#fff;font-size:.95rem;font-weight:600;transition:all .3s ease;backdrop-filter:blur(4px)}
+    .hero-feature:hover{background:rgba(255,255,255,.22);transform:translateY(-3px);border-color:rgba(255,255,255,.6)}
+    .hero-feature i{color:var(--gold);font-size:1.1rem}
+    .reveal-up,.reveal-left,.reveal-right{opacity:0;transition:all .8s cubic-bezier(.4,0,.2,1)}
+    .reveal-up{transform:translateY(40px)}.reveal-left{transform:translateX(40px)}.reveal-right{transform:translateX(-40px)}
+    .reveal-up.visible,.reveal-left.visible,.reveal-right.visible{opacity:1;transform:translate(0)}
+    @media(max-width:768px){.hero{padding:100px 20px 80px}.hero-features{gap:10px}.hero-feature{padding:10px 16px;font-size:.85rem}.whatsapp-float{bottom:20px;left:15px;width:50px;height:50px;font-size:24px}.seats-badge{font-size:11px;padding:8px 14px}}
+    </style>
+
+    <!-- Font Awesome Subset (local, 31 icons only — ~1.5KB vs 18.3KB CDN) -->
+    <link rel="stylesheet" href="fa-subset.css">
+
+    <!-- Cairo Font: async to avoid render-blocking -->
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
     <noscript><link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet"></noscript>
-    
-    <!-- Font Awesome: async load to avoid render-blocking -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></noscript>
-    
-    <link rel="stylesheet" href="styles.css">
-    
-    <!-- Preload hero image for LCP -->
-    <link rel="preload" as="image" href="assets/hero-bg.webp" type="image/webp" media="(min-width: 768px)">
-    <link rel="preload" as="image" href="assets/mobile.webp" type="image/webp" media="(max-width: 767px)">
+
+    <!-- styles.css: async load (non-blocking) -->
+    <link rel="preload" href="styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="styles.css"></noscript>
 </head>
 <body>
 
@@ -47,7 +92,7 @@
             <picture>
                 <source media="(max-width: 767px)" srcset="assets/mobile.webp" type="image/webp">
                 <source srcset="assets/hero-bg.webp" type="image/webp">
-                <img src="assets/hero-bg.jpg" alt="" fetchpriority="high" decoding="sync" aria-hidden="true" style="width:100%;height:100%;object-fit:cover;display:block;">
+                <img src="assets/hero-bg.jpg" alt="" fetchpriority="high" decoding="async" aria-hidden="true" style="width:100%;height:100%;object-fit:cover;display:block;">
             </picture>
         </div>
         <div class="hero-overlay"></div>
