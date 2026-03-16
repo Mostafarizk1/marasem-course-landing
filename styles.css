@@ -1275,10 +1275,25 @@ section { padding: 120px 0; }
     align-items: start;
 }
 
+/* ===== Video Stack: horizontal top, 2 vertical middle, horizontal bottom ===== */
+.videos-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.videos-stack > .video-card.video-horizontal .video-frame {
+    aspect-ratio: 16/9;
+}
+
 .videos-vertical-pair {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 16px;
+}
+
+.videos-vertical-pair .video-frame {
+    aspect-ratio: 9/16;
 }
 
 .videos-horizontal-pair {
