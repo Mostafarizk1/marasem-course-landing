@@ -26,6 +26,21 @@
 document.addEventListener('DOMContentLoaded', function() {
     
     
+    // ===== Lazy-load Video iframes on scroll =====
+    const lazyIframes = document.querySelectorAll('iframe[data-src]');
+    if (lazyIframes.length) {
+        const iframeObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const iframe = entry.target;
+                    iframe.src = iframe.dataset.src;
+                    iframeObserver.unobserve(iframe);
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '200px' });
+        lazyIframes.forEach(iframe => iframeObserver.observe(iframe));
+    }
+
     // ===== Reveal Animations =====
     const revealElements = document.querySelectorAll('.reveal-up, .reveal-left, .reveal-right');
     

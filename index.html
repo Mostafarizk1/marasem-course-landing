@@ -21,6 +21,10 @@
     <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></noscript>
     
     <link rel="stylesheet" href="styles.css">
+    
+    <!-- Preload hero image for LCP -->
+    <link rel="preload" as="image" href="assets/hero-bg.webp" type="image/webp" media="(min-width: 768px)">
+    <link rel="preload" as="image" href="assets/mobile.webp" type="image/webp" media="(max-width: 767px)">
 </head>
 <body>
 
@@ -39,7 +43,13 @@
 
     <!-- Header / Hero Section -->
     <header class="hero">
-        <div class="hero-bg"></div>
+        <div class="hero-bg">
+            <picture>
+                <source media="(max-width: 767px)" srcset="assets/mobile.webp" type="image/webp">
+                <source srcset="assets/hero-bg.webp" type="image/webp">
+                <img src="assets/hero-bg.jpg" alt="" fetchpriority="high" decoding="sync" aria-hidden="true" style="width:100%;height:100%;object-fit:cover;display:block;">
+            </picture>
+        </div>
         <div class="hero-overlay"></div>
         <div class="hero-particles"></div>
         <div class="hero-content">
@@ -103,25 +113,25 @@
             <div class="video-container">
                 <div class="video-card wide reveal-up">
                     <div class="video-frame">
-                        <iframe src="https://player.mediadelivery.net/embed/581330/8663b851-b385-46a7-81a5-ee5ae64ce2dc" loading="lazy" style="border:0;position:absolute;top:0;height:100%;width:100%;" allow="accelerometer;gyroscope;encrypted-media;picture-in-picture;" allowfullscreen="true" title="تطبيق على جوجل ايرث لبيع أرض"></iframe>
+                        <iframe data-src="https://player.mediadelivery.net/embed/581330/8663b851-b385-46a7-81a5-ee5ae64ce2dc" style="border:0;position:absolute;top:0;height:100%;width:100%;" allow="accelerometer;gyroscope;encrypted-media;picture-in-picture;" allowfullscreen="true" title="تطبيق على جوجل ايرث لبيع أرض"></iframe>
                     </div>
                     <span class="video-label">تطبيق على جوجل ايرث لبيع أرض</span>
                 </div>
                 <div class="video-card tall reveal-up">
                     <div class="video-frame">
-                        <iframe src="https://player.mediadelivery.net/embed/581330/13397438-7b7c-4be5-a0b2-775adad5b016" loading="lazy" style="border:0;position:absolute;top:0;height:100%;width:100%;" allow="accelerometer;gyroscope;encrypted-media;picture-in-picture;" allowfullscreen="true" title="التطبيق على تصوير الدرون"></iframe>
+                        <iframe data-src="https://player.mediadelivery.net/embed/581330/13397438-7b7c-4be5-a0b2-775adad5b016" style="border:0;position:absolute;top:0;height:100%;width:100%;" allow="accelerometer;gyroscope;encrypted-media;picture-in-picture;" allowfullscreen="true" title="التطبيق على تصوير الدرون"></iframe>
                     </div>
                     <span class="video-label">التطبيق على تصوير الدرون</span>
                 </div>
                 <div class="video-card tall reveal-up">
                     <div class="video-frame">
-                        <iframe src="https://player.mediadelivery.net/embed/581330/f351a3a8-ad96-4f7c-9431-ebe5b385dc3c" loading="lazy" style="border:0;position:absolute;top:0;height:100%;width:100%;" allow="accelerometer;gyroscope;encrypted-media;picture-in-picture;" allowfullscreen="true" title="تطبيق عملي على جوجل ايرث"></iframe>
+                        <iframe data-src="https://player.mediadelivery.net/embed/581330/f351a3a8-ad96-4f7c-9431-ebe5b385dc3c" style="border:0;position:absolute;top:0;height:100%;width:100%;" allow="accelerometer;gyroscope;encrypted-media;picture-in-picture;" allowfullscreen="true" title="تطبيق عملي على جوجل ايرث"></iframe>
                     </div>
                     <span class="video-label">تطبيق عملي على جوجل ايرث</span>
                 </div>
                 <div class="video-card wide reveal-up">
                     <div class="video-frame">
-                        <iframe src="https://player.mediadelivery.net/embed/581330/c81be9e6-7655-4477-bc3f-e9ce28f0e4ae" loading="lazy" style="border:0;position:absolute;top:0;height:100%;width:100%;" allow="accelerometer;gyroscope;encrypted-media;picture-in-picture;" allowfullscreen="true" title="فيديو عقاري احترافي"></iframe>
+                        <iframe data-src="https://player.mediadelivery.net/embed/581330/c81be9e6-7655-4477-bc3f-e9ce28f0e4ae" style="border:0;position:absolute;top:0;height:100%;width:100%;" allow="accelerometer;gyroscope;encrypted-media;picture-in-picture;" allowfullscreen="true" title="فيديو عقاري احترافي"></iframe>
                     </div>
                     <span class="video-label">فيديو عقاري احترافي</span>
                 </div>
