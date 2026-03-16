@@ -1357,9 +1357,14 @@ section { padding: 120px 0; }
     font-size: 40px;
     cursor: pointer;
     transition: color 0.3s ease;
+    background: none;
+    border: none;
+    padding: 0;
+    line-height: 1;
 }
 
 .modal-close:hover { color: var(--gold); }
+.modal-close:focus-visible { outline: 2px solid var(--gold); border-radius: 4px; }
 
 .modal-content {
     max-width: 90%;

@@ -1,4 +1,28 @@
 // ===== LUXURY LANDING PAGE - JavaScript =====
+
+// ===== Deferred FB Pixel: load on first user interaction =====
+(function() {
+    var fbPixelLoaded = false;
+    function loadFBPixel() {
+        if (fbPixelLoaded) return;
+        fbPixelLoaded = true;
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '3826511920992030');
+        fbq('track', 'PageView');
+    }
+    ['scroll', 'click', 'touchstart', 'keydown'].forEach(function(evt) {
+        window.addEventListener(evt, loadFBPixel, { once: true, passive: true });
+    });
+    setTimeout(loadFBPixel, 5000);
+})();
+
 document.addEventListener('DOMContentLoaded', function() {
     
     
@@ -278,7 +302,6 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // createCountdown(); // Uncomment to enable countdown
     
-    console.log('🚀 Landing page scripts loaded successfully!');
 });
 
 // ===== Certificate Modal Functions =====
