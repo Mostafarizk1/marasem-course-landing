@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>كورس المونتاج العقاري | أكاديمية مراسم</title>
+    <meta name="description" content="تعلم فن إنتاج الفيديوهات العقارية الاحترافية من الصفر حتى الاحتراف مع أكاديمية مراسم. كورس شامل في المونتاج العقاري باستخدام After Effects و Premiere Pro.">
+    <!-- Preconnect for font origins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://connect.facebook.net">
+    <link rel="dns-prefetch" href="https://player.mediadelivery.net">
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+
+    <!-- Preload hero images for LCP -->
+    <link rel="preload" as="image" href="assets/hero-bg.webp" type="image/webp" media="(min-width: 768px)" fetchpriority="high">
+    <link rel="preload" as="image" href="assets/mobile.webp" type="image/webp" media="(max-width: 767px)" fetchpriority="high">
+
+    <!-- Critical CSS: inlined to eliminate render-blocking -->
+    <style>
+    :root{--black-royal:#0a0a0a;--black-rich:#111111;--black-soft:#1a1a1a;--charcoal:#2a2a2a;--charcoal-light:#3a3a3a;--gray-dark:#4a4a4a;--gray:#6a6a6a;--gray-light:#8a8a8a;--gold:#c9a227;--gold-light:#dbb84d;--gold-dark:#a68520;--white:#ffffff;--white-off:#f5f5f5;--danger:#8b0000;--whatsapp:#25d366;--gradient-gold:linear-gradient(135deg,var(--gold) 0%,var(--gold-light) 50%,var(--gold) 100%);--gradient-dark:linear-gradient(180deg,var(--black-royal) 0%,var(--black-rich) 100%);--shadow-sm:0 2px 10px rgba(0,0,0,.3);--shadow-md:0 8px 30px rgba(0,0,0,.4);--shadow-lg:0 20px 60px rgba(0,0,0,.5);--shadow-gold:0 0 40px rgba(201,162,39,.3)}
+    *{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+    body{font-family:'Cairo',sans-serif;background:var(--black-royal);color:var(--white);line-height:1.8;overflow-x:hidden}
+    .container{max-width:1200px;margin:0 auto;padding:0 24px}
+    .whatsapp-float{position:fixed;bottom:30px;left:30px;background:var(--whatsapp);color:#fff;width:60px;height:60px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:28px;box-shadow:0 4px 20px rgba(37,211,102,.4);z-index:1000;text-decoration:none;transition:all .3s ease}
+    .whatsapp-float:hover{transform:scale(1.1);box-shadow:0 6px 30px rgba(37,211,102,.6);width:auto;padding:0 20px;border-radius:30px}
+    .whatsapp-float .whatsapp-text{display:none;margin-right:10px;font-size:14px;font-weight:600}.whatsapp-float:hover .whatsapp-text{display:block}
+    .seats-badge{position:fixed;top:20px;left:20px;background:var(--danger);color:#fff;padding:10px 20px;border-radius:8px;display:flex;align-items:center;gap:10px;font-size:13px;font-weight:600;z-index:1000;border:1px solid rgba(255,255,255,.1)}
+    .seats-badge .pulse-ring{position:absolute;inset:0;border-radius:8px;border:2px solid var(--danger);animation:pulse-ring 2s infinite}
+    @keyframes pulse-ring{0%{transform:scale(1);opacity:1}100%{transform:scale(1.2);opacity:0}}
+    .hero{min-height:100vh;position:relative;display:flex;align-items:center;justify-content:center;text-align:center;padding:120px 20px;overflow:hidden}
+    .hero-bg{position:absolute;inset:0;overflow:hidden;filter:brightness(.5)}
+    .hero-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,10,10,.65) 0%,rgba(10,10,10,.5) 50%,rgba(10,10,10,.75) 100%)}
+    .hero-particles{position:absolute;inset:0;background-image:radial-gradient(circle at 20% 80%,rgba(201,162,39,.03) 0%,transparent 50%),radial-gradient(circle at 80% 20%,rgba(201,162,39,.03) 0%,transparent 50%)}
+    .hero-content{position:relative;z-index:2;max-width:800px}
+    .badge-limited{display:inline-flex;align-items:center;gap:10px;background:rgba(139,0,0,.3);border:1px solid var(--danger);color:#ff6b6b;padding:10px 24px;border-radius:50px;font-size:13px;font-weight:600;margin-bottom:30px;letter-spacing:.5px}
+    .badge-dot{width:8px;height:8px;background:#ff6b6b;border-radius:50%;animation:blink 1s infinite}
+    @keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+    .hero h1{font-size:clamp(2.5rem,7vw,4.5rem);font-weight:900;line-height:1.4;margin-bottom:24px;padding-bottom:10px}
+    .hero h1 .line{display:block}.hero h1 .highlight{background:var(--gradient-gold);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+    .hero-subtitle{font-size:1.2rem;color:var(--gray-light);margin-bottom:40px;font-weight:300;max-width:550px;margin-left:auto;margin-right:auto}
+    .hero-cta{margin-bottom:30px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;padding:16px 40px;border-radius:8px;font-size:1rem;font-weight:700;text-decoration:none;transition:all .4s ease;border:none;cursor:pointer;font-family:inherit;position:relative;overflow:hidden}
+    .btn-gold{background:var(--gradient-gold);color:var(--black-royal)}
+    .btn-gold .btn-content{position:relative;z-index:1;display:flex;align-items:center;gap:10px}
+    .btn-gold .btn-shine{position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.3),transparent);transition:left .6s ease}
+    .btn-gold:hover .btn-shine{left:100%}.btn-gold:hover{transform:translateY(-2px);box-shadow:var(--shadow-gold)}
+    .btn-large{padding:18px 50px;font-size:1.1rem}
+    .scroll-indicator{position:absolute;bottom:40px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:10px;color:var(--gray);font-size:12px}
+    .mouse{width:24px;height:40px;border:2px solid var(--gray);border-radius:12px;position:relative}
+    .wheel{width:4px;height:8px;background:var(--gold);border-radius:2px;position:absolute;top:8px;left:50%;transform:translateX(-50%);animation:scroll-wheel 2s infinite}
+    @keyframes scroll-wheel{0%,100%{opacity:1;top:8px}50%{opacity:.3;top:20px}}
+    .hero-features{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-bottom:32px;max-width:700px;margin-left:auto;margin-right:auto}
+    .hero-feature{display:flex;align-items:center;gap:10px;padding:12px 20px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.35);border-radius:50px;color:#fff;font-size:.95rem;font-weight:600;transition:all .3s ease;backdrop-filter:blur(4px)}
+    .hero-feature:hover{background:rgba(255,255,255,.22);transform:translateY(-3px);border-color:rgba(255,255,255,.6)}
+    .hero-feature i{color:var(--gold);font-size:1.1rem}
+    .reveal-up,.reveal-left,.reveal-right{opacity:0;transition:all .8s cubic-bezier(.4,0,.2,1)}
+    .reveal-up{transform:translateY(40px)}.reveal-left{transform:translateX(40px)}.reveal-right{transform:translateX(-40px)}
+    .reveal-up.visible,.reveal-left.visible,.reveal-right.visible{opacity:1;transform:translate(0)}
+    @media(max-width:768px){.hero{padding:100px 20px 80px}.hero-features{gap:10px}.hero-feature{padding:10px 16px;font-size:.85rem}.whatsapp-float{bottom:20px;left:15px;width:50px;height:50px;font-size:24px}.seats-badge{font-size:11px;padding:8px 14px}}
+    </style>
+
+    <!-- Font Awesome Subset (local, 31 icons only — ~1.5KB vs 18.3KB CDN) -->
+    <link rel="stylesheet" href="fa-subset.css">
+
+    <!-- Cairo Font: async to avoid render-blocking -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet"></noscript>
+
+    <!-- styles.css: async load (non-blocking) -->
+    <link rel="preload" href="styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="styles.css"></noscript>
+</head>
+<body>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/201034144446?text=%D8%A3%D9%87%D9%84%D8%A7%D9%8B%20%D8%8C%20%D8%A3%D9%86%D8%A7%20%D9%82%D8%B1%D9%8A%D8%AA%20%D9%83%D9%84%20%D8%AA%D9%81%D8%A7%D8%B5%D9%8A%D9%84%20%D9%83%D9%88%D8%B1%D8%B3%20%D8%A7%D9%84%D9%85%D9%88%D9%86%D8%AA%D8%A7%D8%AC%20%D8%A7%D9%84%D8%B9%D9%82%D8%A7%D8%B1%D9%8A%20%D8%B9%D9%84%D9%89%20%D8%A7%D9%84%D9%85%D9%88%D9%82%D8%B9%20%D9%88%D8%AC%D8%A7%D9%87%D8%B2%20%D9%84%D9%84%D8%A7%D8%B4%D8%AA%D8%B1%D8%A7%D9%83%D8%8C%20%D8%A5%D9%8A%D9%87%20%D9%87%D9%8A%20%D8%B7%D8%B1%D9%82%20%D8%A7%D9%84%D8%AF%D9%81%D8%B9%20%D8%A7%D9%84%D9%85%D8%AA%D8%A7%D8%AD%D8%A9%D8%9F" target="_blank" rel="noopener noreferrer" class="whatsapp-float" aria-label="تواصل معنا عبر الواتساب">
+        <i class="fab fa-whatsapp"></i>
+        <span class="whatsapp-text">تواصل معنا</span>
+    </a>
+
+    <!-- Limited Seats Badge -->
+    <div class="seats-badge">
+        <div class="pulse-ring"></div>
+        <i class="fas fa-fire"></i>
+        <span>متبقي <strong>2</strong> مقاعد فقط من 15!</span>
+    </div>
+
+    <!-- Header / Hero Section -->
+    <header class="hero">
+        <div class="hero-bg">
+            <picture>
+                <source media="(max-width: 767px)" srcset="assets/mobile.webp" type="image/webp">
+                <source srcset="assets/hero-bg.webp" type="image/webp">
+                <img src="assets/hero-bg.jpg" alt="" fetchpriority="high" decoding="async" aria-hidden="true" style="width:100%;height:100%;object-fit:cover;display:block;">
+            </picture>
+        </div>
+        <div class="hero-overlay"></div>
+        <div class="hero-particles"></div>
+        <div class="hero-content">
+            <div class="badge-limited reveal-up">
+                <span class="badge-dot"></span>
+                المقاعد محدودة جداً
+            </div>
+            <h1 class="reveal-up">
+                <span class="line">كورس</span>
+                <span class="line highlight">المونتاج العقاري</span>
+            </h1>
+            <p class="hero-subtitle reveal-up">تعلم فن إنتاج الفيديوهات العقارية الاحترافية من الصفر حتى الاحتراف</p>
+            <div class="hero-features reveal-up">
+                <div class="hero-feature">
+                    <i class="fas fa-graduation-cap"></i>
+                    <span>من الصفر للاحتراف</span>
+                </div>
+                <div class="hero-feature">
+                    <i class="fas fa-tools"></i>
+                    <span>تعلم الأساسيات</span>
+                </div>
+                <div class="hero-feature">
+                    <i class="fas fa-briefcase"></i>
+                    <span>بناء معرض أعمال</span>
+                </div>
+                <div class="hero-feature">
+                    <i class="fas fa-bullhorn"></i>
+                    <span>تسويق شغلك وجلب عملاء</span>
+                </div>
+                <div class="hero-feature">
+                    <i class="fas fa-user-tie"></i>
+                    <span>فرص توظيف مباشر</span>
+                </div>
+            </div>
+            <div class="hero-cta reveal-up">
+                <a href="https://wa.me/201034144446?text=%D8%A3%D9%87%D9%84%D8%A7%D9%8B%20%D8%8C%20%D8%A3%D9%86%D8%A7%20%D9%82%D8%B1%D9%8A%D8%AA%20%D9%83%D9%84%20%D8%AA%D9%81%D8%A7%D8%B5%D9%8A%D9%84%20%D9%83%D9%88%D8%B1%D8%B3%20%D8%A7%D9%84%D9%85%D9%88%D9%86%D8%AA%D8%A7%D8%AC%20%D8%A7%D9%84%D8%B9%D9%82%D8%A7%D8%B1%D9%8A%20%D8%B9%D9%84%D9%89%20%D8%A7%D9%84%D9%85%D9%88%D9%82%D8%B9%20%D9%88%D8%AC%D8%A7%D9%87%D8%B2%20%D9%84%D9%84%D8%A7%D8%B4%D8%AA%D8%B1%D8%A7%D9%83%D8%8C%20%D8%A5%D9%8A%D9%87%20%D9%87%D9%8A%20%D8%B7%D8%B1%D9%82%20%D8%A7%D9%84%D8%AF%D9%81%D8%B9%20%D8%A7%D9%84%D9%85%D8%AA%D8%A7%D8%AD%D8%A9%D8%9F" class="btn btn-gold" aria-label="احجز مقعدك الآن عبر الواتساب" rel="noopener noreferrer">
+                    <span class="btn-content">
+                        <i class="fab fa-whatsapp"></i>
+                        احجز مقعدك الآن
+                    </span>
+                    <span class="btn-shine"></span>
+                </a>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+            <span>اسكرول للأسفل</span>
+        </div>
+    </header>
+
+    <!-- Video Showcase Section -->
+    <section id="video" class="video-section">
+        <div class="container">
+            <div class="section-header reveal-up">
+                <span class="section-tag">نماذج الأعمال</span>
+                <h2 class="section-title">الفيديوهات اللي هنشرح عليها الكورس</h2>
+                <div class="title-line"></div>
+            </div>
+            <div class="video-container">
+                <div class="video-card wide reveal-up">
+                    <div class="video-frame">
+                        <iframe data-src="https://player.mediadelivery.net/embed/581330/8663b851-b385-46a7-81a5-ee5ae64ce2dc" style="border:0;position:absolute;top:0;height:100%;width:100%;" allow="accelerometer;gyroscope;encrypted-media;picture-in-picture;" allowfullscreen="true" title="تطبيق على جوجل ايرث لبيع أرض"></iframe>
+                    </div>
+                    <span class="video-label">تطبيق على جوجل ايرث لبيع أرض</span>
+                </div>
+                <div class="video-card tall reveal-up">
+                    <div class="video-frame">
+                        <iframe data-src="https://player.mediadelivery.net/embed/581330/13397438-7b7c-4be5-a0b2-775adad5b016" style="border:0;position:absolute;top:0;height:100%;width:100%;" allow="accelerometer;gyroscope;encrypted-media;picture-in-picture;" allowfullscreen="true" title="التطبيق على تصوير الدرون"></iframe>
+                    </div>
+                    <span class="video-label">التطبيق على تصوير الدرون</span>
+                </div>
+                <div class="video-card tall reveal-up">
+                    <div class="video-frame">
+                        <iframe data-src="https://player.mediadelivery.net/embed/581330/f351a3a8-ad96-4f7c-9431-ebe5b385dc3c" style="border:0;position:absolute;top:0;height:100%;width:100%;" allow="accelerometer;gyroscope;encrypted-media;picture-in-picture;" allowfullscreen="true" title="تطبيق عملي على جوجل ايرث"></iframe>
+                    </div>
+                    <span class="video-label">تطبيق عملي على جوجل ايرث</span>
+                </div>
+                <div class="video-card wide reveal-up">
+                    <div class="video-frame">
+                        <iframe data-src="https://player.mediadelivery.net/embed/581330/c81be9e6-7655-4477-bc3f-e9ce28f0e4ae" style="border:0;position:absolute;top:0;height:100%;width:100%;" allow="accelerometer;gyroscope;encrypted-media;picture-in-picture;" allowfullscreen="true" title="فيديو عقاري احترافي"></iframe>
+                    </div>
+                    <span class="video-label">فيديو عقاري احترافي</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Academy -->
+    <section id="academy" class="about-section">
+        <div class="container">
+            <div class="about-layout">
+                <div class="about-visual reveal-right">
+                    <div class="visual-frame">
+                        <div class="frame-corner top-right"></div>
+                        <div class="frame-corner bottom-left"></div>
+                        <div class="visual-content">
+                            <img src="assets/marasim-office.jpg" alt="مقر أكاديمية مراسم للتدريب والتطوير" width="500" height="500" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;border-radius:8px;display:block;">
+                        </div>
+                    </div>
+                </div>
+                <div class="about-content reveal-left">
+                    <span class="section-tag">الشريك التدريبي</span>
+                    <h2>أكاديمية مراسم</h2>
+                    <p class="about-lead">مؤسسة رائدة في تطوير الكوادر البشرية وضخ كفاءات احترافية في سوق العمل</p>
+                    <div class="about-features">
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-handshake"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h4>شراكات استراتيجية</h4>
+                                <p>مع كبرى شركات التطوير العقاري في مصر والوطن العربي</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-briefcase"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h4>توظيف مباشر</h4>
+                                <p>ترشيح المتميزين للعمل المباشر في الشركات الشريكة</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Instructor Section -->
+    <section id="instructor" class="instructor-section">
+        <div class="container">
+            <div class="section-header reveal-up">
+                <span class="section-tag">تعرف على</span>
+                <h2 class="section-title">عن المحاضر</h2>
+                <div class="title-line"></div>
+            </div>
+            <div class="instructor-layout">
+                <div class="instructor-image-wrapper reveal-up">
+                    <div class="image-glow"></div>
+                    <div class="instructor-photo">
+                        <img src="assets/profile.png" alt="مصطفى رزق - مصمم موشن جرافيك ومحرر فيديو" width="300" height="300" loading="lazy" decoding="async">
+                    </div>
+                    <div class="certificate-badge" onclick="openCertificate()" role="button" tabindex="0" aria-label="عرض شهادة Adobe المعتمدة بالحجم الكامل" style="cursor:pointer;" onkeydown="if(event.key==='Enter'||event.key===' ')openCertificate()">
+                        <img src="assets/certificate-adobe.jpg" alt="شهادة Adobe Certified Professional لمصطفى رزق" width="120" height="80" loading="lazy" decoding="async">
+                        <span>اضغط للتكبير</span>
+                    </div>
+                </div>
+                <div class="instructor-info reveal-up">
+                    <h3 class="instructor-name">مصطفى رزق</h3>
+                    <p class="instructor-title">مصمم موشن جرافيك ومحرر فيديو (Video Editor)</p>
+                    <ul class="achievements-list">
+                        <li>
+                            <i class="fas fa-clock"></i>
+                            <span>بخبرة تمتد لـ <strong>10 سنوات</strong> في إنتاج المحتوى المرئي</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-globe-africa"></i>
+                            <span><strong>سابقة أعمال قوية</strong> مع كبرى الشركات والمؤسسات في مصر، المملكة العربية السعودية، الإمارات، والأردن</span>
+                        </li>
+                        <li>
+                            <i class="fab fa-adobe"></i>
+                            <span><strong>حاصل على شهادات احترافية معتمدة</strong> من شركة أدوبي (Adobe)</span>
+                        </li>
+                    </ul>
+                    <a href="https://www.mostafarizkk.com/services" target="_blank" class="btn btn-outline-gold">
+                        <i class="fas fa-external-link-alt"></i>
+                        لمشاهدة معرض الأعمال اضغط هنا
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Certificate Modal -->
+    <div id="certificateModal" class="modal" role="dialog" aria-modal="true" aria-label="شهادة Adobe المعتمدة" onclick="closeCertificate()">
+        <button class="modal-close" onclick="closeCertificate()" aria-label="إغلاق النافذة">&times;</button>
+        <img src="assets/certificate-adobe.jpg" alt="شهادة Adobe Certified Professional لمصطفى رزق" class="modal-content" loading="lazy" decoding="async">
+    </div>
+
+    <!-- Course Journey Timeline -->
+    <section id="journey" class="journey-section">
+        <div class="container">
+            <div class="section-header reveal-up">
+                <span class="section-tag">رحلة التعلم</span>
+                <h2 class="section-title">محتوى الكورس</h2>
+                <div class="title-line"></div>
+            </div>
+            <div class="timeline-container">
+                <div class="timeline-progress">
+                    <div class="progress-fill"></div>
+                </div>
+                <div class="timeline-items">
+                    <div class="timeline-item" data-step="1">
+                        <div class="timeline-marker">
+                            <span class="marker-number">01</span>
+                            <div class="marker-pulse"></div>
+                        </div>
+                        <div class="timeline-content reveal-right">
+                            <h3>استقبال العميل والتفاوض</h3>
+                            <p>تعلم كيفية التعامل مع العملاء والتفاوض على الأسعار بشكل احترافي</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item" data-step="2">
+                        <div class="timeline-marker">
+                            <span class="marker-number">02</span>
+                            <div class="marker-pulse"></div>
+                        </div>
+                        <div class="timeline-content reveal-left">
+                            <h3>أخذ البريف الإبداعي</h3>
+                            <p>كيف تأخذ بريف واضح يساعدك تبني الفيديو في مخيلتك قبل ما تبدأ تنفذ</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item" data-step="3">
+                        <div class="timeline-marker">
+                            <span class="marker-number">03</span>
+                            <div class="marker-pulse"></div>
+                        </div>
+                        <div class="timeline-content reveal-right">
+                            <h3>تحويل البريف لنص تسويقي</h3>
+                            <p>صياغة نص إعلاني مؤثر يخدم أهداف المشروع العقاري</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item" data-step="4">
+                        <div class="timeline-marker">
+                            <span class="marker-number">04</span>
+                            <div class="marker-pulse"></div>
+                        </div>
+                        <div class="timeline-content reveal-left">
+                            <h3>تحويل النص لتعليق صوتي</h3>
+                            <p>إنتاج Voice Over احترافي يناسب طبيعة الفيديو العقاري</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item highlight-item" data-step="5">
+                        <div class="timeline-marker">
+                            <span class="marker-number">05</span>
+                            <div class="marker-pulse"></div>
+                        </div>
+                        <div class="timeline-content reveal-right">
+                            <div class="content-badge">المحتوى التقني الأساسي</div>
+                            <h3>أساسيات After Effects & Premiere</h3>
+                            <p>تطبيق عملي مكثف على البرامج <strong class="highlight-text">بما يخدم المونتاج العقاري تحديداً</strong></p>
+                            <ul class="detailed-list">
+                                <li>تعلم أساسيات برنامج أدوبي افترافيكتس</li>
+                                <li>تعلم أساسيات برنامج أدوبي برمير</li>
+                                <li>ازاي تجيب شوت من Google Earth</li>
+                                <li>ازاي تحوله من فيديو لمساحة عمل على After Effects تقدر تمشي فيها بالكاميرا</li>
+                                <li>ازاي تظبط مساحة العمل داخل After Effects</li>
+                                <li>شرح أساسيات الكاميرا جوا After Effects</li>
+                                <li>ازاي تعمل كيوب أو Target للمبنى بتاعك</li>
+                                <li>ازاي تلون المشهد وتسيب الفوكس على المبنى أو العقار بتاعك</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="timeline-item" data-step="6">
+                        <div class="timeline-marker">
+                            <span class="marker-number">06</span>
+                            <div class="marker-pulse"></div>
+                        </div>
+                        <div class="timeline-content reveal-left">
+                            <div class="content-badge">تقنيات متقدمة</div>
+                            <h3>Advanced Techniques</h3>
+                            <ul class="detailed-list">
+                                <li>الفرق بين Classic 3D و Advanced 3D</li>
+                                <li>ازاي تضيف جرافيكس (Shapes أو صور)</li>
+                                <li>ازاي تضيف Text للفيديو</li>
+                                <li>مجموعة Plugins هتساعدنا في الشغل</li>
+                                <li>شرح أهم الإفكتات الشائعة في المجال</li>
+                                <li>ازاي ندخل عناصر 3D خارجية ونوظفها</li>
+                                <li>نتعلم أساسيات Tracking</li>
+                                <li>نبذة عن توظيف الذكاء الصناعي في مجال المونتاج العقاري</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="timeline-item" data-step="7">
+                        <div class="timeline-marker">
+                            <span class="marker-number">07</span>
+                            <div class="marker-pulse"></div>
+                        </div>
+                        <div class="timeline-content reveal-right">
+                            <h3>التجميع النهائي والتسليم</h3>
+                            <ul class="detailed-list">
+                                <li>ازاي نقفل الفيديو على After Effects</li>
+                                <li>ننتقل للتجميع النهائي على Premiere Pro</li>
+                                <li>إضافة الموسيقى واختيار مؤثرات صوتية مناسبة</li>
+                                <li>ملف موسيقى شائعة للتسهيل</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why This Course is an Investment -->
+    <section id="investment" class="investment-section">
+        <div class="container">
+            <div class="section-header reveal-up">
+                <span class="section-tag">استثمر في نفسك</span>
+                <h2 class="section-title">ليه الكورس ده استثمار مش تكلفة؟</h2>
+                <div class="title-line"></div>
+            </div>
+            <div class="investment-content">
+                <div class="investment-main reveal-up">
+                    <div class="investment-highlight">
+                        <i class="fas fa-route"></i>
+                        <h3>رحلة متكاملة للربح</h3>
+                        <p>الكورس مش مجرد شرح أدوات. إحنا بناخدك في رحلة من أول <strong>"إزاي تلاقي العميل"</strong> لحد <strong>"إزاي تسلم أول مشروع"</strong>.</p>
+                        <div class="highlight-box">
+                            <i class="fas fa-coins"></i>
+                            <span>بنسبة كبيرة جداً، مكسبك من أول مشروعين هيغطي تمن الكورس بالكامل وإنت قاعد في بيتك!</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="investment-grid">
+                    <div class="investment-card reveal-up">
+                        <div class="card-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <h4>الخلاصة في وقت أقل</h4>
+                        <p>يوتيوب مليان معلومات، بس متفرقة عشان تخليك تتفرج ساعات. إحنا بنديك الخلاصة اللي تنفذها في دقايق، لأن وقتك بفلوس.</p>
+                    </div>
+                    <div class="investment-card reveal-up">
+                        <div class="card-icon">
+                            <i class="fas fa-user-graduate"></i>
+                        </div>
+                        <h4>منتور في ظهرك</h4>
+                        <p>لو عطلت في يوتيوب، مفيش حد هيرد عليك. هنا، معاك توجيه مباشر ومتابعة خطوة بخطوة عشان نصلح أخطاءك ونطور مستواك.</p>
+                    </div>
+                    <div class="investment-card reveal-up">
+                        <div class="card-icon">
+                            <i class="fas fa-gift"></i>
+                        </div>
+                        <h4>هدايا احترافية</h4>
+                        <p>مش هنسيبك تدور على أدوات. هنوفرلك مواد خام عالية الجودة تتدرب عليها، زائد <strong>Plugins مدفوعة هتاخدها مجاناً!</strong></p>
+                    </div>
+                    <div class="investment-card reveal-up">
+                        <div class="card-icon">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <h4>تفكير مش بس تنفيذ</h4>
+                        <p>الكورس بيعلمك <strong>"إزاي تفكر بشكل إبداعي"</strong> وتعمل فيديو يبيع العقار، مش مجرد تقص وتلزق.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Who is this for -->
+    <section id="target" class="target-section">
+        <div class="container">
+            <div class="section-header reveal-up">
+                <span class="section-tag">الفئة المستهدفة</span>
+                <h2 class="section-title">لمن هذا الكورس؟</h2>
+                <div class="title-line"></div>
+                <p class="section-subtitle">
+                    <i class="fas fa-info-circle"></i>
+                    لا يتطلب أي خبرة سابقة نهائياً - نبدأ معك من الصفر
+                </p>
+            </div>
+            <div class="target-grid">
+                <div class="target-card reveal-up">
+                    <div class="card-glow"></div>
+                    <div class="card-icon">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <h4>محرري الفيديو</h4>
+                    <p>الراغبين في التخصص بالنيش العقاري المربح</p>
+                </div>
+                <div class="target-card reveal-up">
+                    <div class="card-glow"></div>
+                    <div class="card-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <h4>شركات التطوير العقاري</h4>
+                    <p>لبناء فريق تسويق داخلي محترف</p>
+                </div>
+                <div class="target-card reveal-up">
+                    <div class="card-glow"></div>
+                    <div class="card-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h4>وسطاء العقارات</h4>
+                    <p>لتسويق الوحدات والمشاريع بشكل مميز</p>
+                </div>
+                <div class="target-card reveal-up">
+                    <div class="card-glow"></div>
+                    <div class="card-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h4>الطامحين لتغيير مسارهم</h4>
+                    <p>لدخول مجال مربح بدون خبرة سابقة</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Direct Employment Opportunities -->
+    <section id="employment" class="employment-section">
+        <div class="container">
+            <div class="employment-card reveal-up">
+                <div class="employment-icon">
+                    <i class="fas fa-briefcase"></i>
+                </div>
+                <div class="employment-content">
+                    <h3>فرصة للمتميزين</h3>
+                    <p>لأننا واثقين في جودة التدريب، <strong>المتميزين في مشروع التخرج</strong> هيتم ترشيحهم لتوظيف مباشر في شركات تطوير عقاري داخل وخارج مصر، أو العمل على مشاريع مستقلة (Freelance) مع المحاضر مباشرةً.</p>
+                    <div class="employment-note">
+                        <i class="fas fa-info-circle"></i>
+                        <span><strong>توضيح هام:</strong> هذا ليس "وعداً بالتوظيف" لمجرد الشراء، بل هو التزام منا بدعم المتميزين والمجتهدين. تذكر دائماً: أنت تتعلم لنفسك وتستثمر في مهاراتك، والاجتهاد هو مفتاحك للسوق.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Requirements -->
+    <section id="requirements" class="requirements-section">
+        <div class="container">
+            <div class="section-header reveal-up">
+                <span class="section-tag">التجهيزات</span>
+                <h2 class="section-title">متطلبات الحضور</h2>
+                <div class="title-line"></div>
+            </div>
+            <div class="requirements-card reveal-up">
+                <div class="card-header">
+                    <i class="fas fa-laptop"></i>
+                    <span>جهاز لابتوب بالمواصفات التالية (كحد أدنى)</span>
+                </div>
+                <div class="specs-grid">
+                    <div class="spec-item">
+                        <div class="spec-icon"><i class="fas fa-microchip"></i></div>
+                        <div class="spec-details">
+                            <span class="spec-label">المعالج</span>
+                            <span class="spec-value">Intel Core i5/i7 (Gen 10+)</span>
+                        </div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-icon"><i class="fas fa-memory"></i></div>
+                        <div class="spec-details">
+                            <span class="spec-label">الرام</span>
+                            <span class="spec-value">8GB أو أكثر</span>
+                        </div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-icon"><i class="fas fa-desktop"></i></div>
+                        <div class="spec-details">
+                            <span class="spec-label">كارت الشاشة</span>
+                            <span class="spec-value">2-4GB VRAM</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Study System -->
+    <section id="system" class="system-section">
+        <div class="container">
+            <div class="section-header reveal-up">
+                <span class="section-tag">نظام الدراسة</span>
+                <h2 class="section-title">طريقة الحضور</h2>
+                <div class="title-line"></div>
+            </div>
+            <div class="system-single reveal-up">
+                <div class="system-card-main">
+                    <div class="card-accent"></div>
+                    <div class="card-icon"><i class="fas fa-users"></i></div>
+                    <h3>حضوري تفاعلي (تطبيق عملي مباشر)</h3>
+                    <p>التدريب بيتم داخل قاعات الأكاديمية المجهزة، مع تطبيق خطوة بخطوة على مشاريع عقارية حقيقية لتجهيز البورتفوليو بتاعك.</p>
+                    <div class="bonus-badge">
+                        <i class="fas fa-gift"></i>
+                        <span><strong>🎁 بونص مجاني:</strong> وصول مدى الحياة لتسجيلات جميع المحاضرات عالية الجودة للمراجعة في أي وقت</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing-section">
+        <div class="container">
+            <div class="section-header reveal-up">
+                <span class="section-tag">الاستثمار</span>
+                <h2 class="section-title">مدة وسعر الكورس</h2>
+                <div class="title-line"></div>
+            </div>
+            <div class="pricing-card reveal-up">
+                <div class="pricing-ribbon-wrapper">
+                    <div class="pricing-ribbon">خصم لأول 15 مقعد فقط</div>
+                </div>
+                <div class="pricing-header">
+                    <div class="duration-badge">
+                        <i class="fas fa-calendar-alt"></i>
+                        <div>
+                            <span class="duration-value">45 يوماً</span>
+                            <span class="duration-label">شهر ونصف من التطبيق العملي</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="pricing-body">
+                    <div class="price-original">
+                        <span class="label">السعر الأصلي</span>
+                        <span class="value">15,000 ج.م</span>
+                    </div>
+                    <div class="price-save">
+                        <i class="fas fa-tag"></i>
+                        وفر 6,000 ج.م (خصم 40%)
+                    </div>
+                    <div class="price-final">
+                        <span class="label">السعر بعد الخصم</span>
+                        <div class="price-amount">
+                            <span class="currency">ج.م</span>
+                            <span class="value">9,000</span>
+                        </div>
+                    </div>
+                    <div class="installment-option">
+                        <i class="fas fa-credit-card"></i>
+                        <span>إمكانية التقسيط متاحة</span>
+                    </div>
+                </div>
+                <div class="pricing-footer">
+                    <div class="seats-alert">
+                        <div class="alert-icon">
+                            <i class="fas fa-exclamation-triangle"></i>
+                        </div>
+                        <span>متبقي <strong>2</strong> مقاعد فقط من أصل <strong>15</strong> مقعد!</span>
+                    </div>
+                    <a href="https://wa.me/201034144446?text=%D8%A3%D9%87%D9%84%D8%A7%D9%8B%20%D8%8C%20%D8%A3%D9%86%D8%A7%20%D9%82%D8%B1%D9%8A%D8%AA%20%D9%83%D9%84%20%D8%AA%D9%81%D8%A7%D8%B5%D9%8A%D9%84%20%D9%83%D9%88%D8%B1%D8%B3%20%D8%A7%D9%84%D9%85%D9%88%D9%86%D8%AA%D8%A7%D8%AC%20%D8%A7%D9%84%D8%B9%D9%82%D8%A7%D8%B1%D9%8A%20%D8%B9%D9%84%D9%89%20%D8%A7%D9%84%D9%85%D9%88%D9%82%D8%B9%20%D9%88%D8%AC%D8%A7%D9%87%D8%B2%20%D9%84%D9%84%D8%A7%D8%B4%D8%AA%D8%B1%D8%A7%D9%83%D8%8C%20%D8%A5%D9%8A%D9%87%20%D9%87%D9%8A%20%D8%B7%D8%B1%D9%82%20%D8%A7%D9%84%D8%AF%D9%81%D8%B9%20%D8%A7%D9%84%D9%85%D8%AA%D8%A7%D8%AD%D8%A9%D8%9F" class="btn btn-gold btn-large" aria-label="احجز مقعدك الآن عبر الواتساب" rel="noopener noreferrer">
+                        <span class="btn-content">
+                            <i class="fab fa-whatsapp" aria-hidden="true"></i>
+                            احجز مقعدك الآن
+                        </span>
+                        <span class="btn-shine"></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Registration Form Section -->
+    <section id="registration" class="registration-section">
+        <div class="container">
+            <div class="registration-card reveal-up">
+                <div class="registration-header">
+                    <div class="info-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3>الكورس حالياً أوفلاين في مدينة نصر</h3>
+                    <p>لو محتاج تعرف تفاصيل أكتر عن مواعيد الحضور، المكان بالتحديد، أو عندك أي استفسار، سيب بياناتك وهنتواصل معاك في أقرب وقت</p>
+                </div>
+                <form class="registration-form" id="registrationForm">
+                    <div class="form-group">
+                        <label for="name">
+                            <i class="fas fa-user"></i>
+                            الاسم
+                        </label>
+                        <input type="text" id="name" name="name" placeholder="اكتب اسمك هنا" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">
+                            <i class="fas fa-phone"></i>
+                            رقم التليفون
+                        </label>
+                        <input type="tel" id="phone" name="phone" placeholder="01xxxxxxxxx" required pattern="[0-9]{11}">
+                    </div>
+                    <button type="submit" class="btn btn-gold btn-large">
+                        <span class="btn-content">
+                            <i class="fas fa-paper-plane"></i>
+                            سجل اهتمامك الآن
+                        </span>
+                        <span class="btn-shine"></span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="cta-bg"></div>
+        <div class="container">
+            <div class="cta-content reveal-up">
+                <h2>جاهز تبدأ رحلتك في المونتاج العقاري؟</h2>
+                <p>تواصل معنا الآن وانضم لأقرب دفعة</p>
+                <div class="cta-buttons">
+                    <a href="https://wa.me/201034144446?text=%D8%A3%D9%87%D9%84%D8%A7%D9%8B%20%D8%8C%20%D8%A3%D9%86%D8%A7%20%D9%82%D8%B1%D9%8A%D8%AA%20%D9%83%D9%84%20%D8%AA%D9%81%D8%A7%D8%B5%D9%8A%D9%84%20%D9%83%D9%88%D8%B1%D8%B3%20%D8%A7%D9%84%D9%85%D9%88%D9%86%D8%AA%D8%A7%D8%AC%20%D8%A7%D9%84%D8%B9%D9%82%D8%A7%D8%B1%D9%8A%20%D8%B9%D9%84%D9%89%20%D8%A7%D9%84%D9%85%D9%88%D9%82%D8%B9%20%D9%88%D8%AC%D8%A7%D9%87%D8%B2%20%D9%84%D9%84%D8%A7%D8%B4%D8%AA%D8%B1%D8%A7%D9%83%D8%8C%20%D8%A5%D9%8A%D9%87%20%D9%87%D9%8A%20%D8%B7%D8%B1%D9%82%20%D8%A7%D9%84%D8%AF%D9%81%D8%B9%20%D8%A7%D9%84%D9%85%D8%AA%D8%A7%D8%AD%D8%A9%D8%9F" class="btn btn-gold btn-large">
+                        <span class="btn-content">
+                            <i class="fab fa-whatsapp"></i>
+                            تواصل عبر الواتساب
+                        </span>
+                        <span class="btn-shine"></span>
+                    </a>
+                </div>
+                <div class="contact-numbers">
+                    <a href="tel:+201034144446" aria-label="اتصل بنا على 01034144446">
+                        <i class="fas fa-phone-alt" aria-hidden="true"></i>
+                        01034144446
+                    </a>
+                    <span class="divider" aria-hidden="true">|</span>
+                    <a href="tel:+201034244449" aria-label="اتصل بنا على 01034244449">
+                        <i class="fas fa-phone-alt" aria-hidden="true"></i>
+                        01034244449
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2026 أكاديمية مراسم للتدريب والتطوير</p>
+                <p class="footer-note">جميع الحقوق محفوظة</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js" defer></script>
+</body>
+</html>
