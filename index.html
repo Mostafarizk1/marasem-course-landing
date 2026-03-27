@@ -712,9 +712,49 @@
             <div class="footer-content">
                 <p>&copy; 2026 أكاديمية مراسم للتدريب والتطوير</p>
                 <p class="footer-note">جميع الحقوق محفوظة</p>
+                <div class="footer-links">
+                    <a href="#" class="privacy-link" onclick="openPrivacyModal(); return false;">
+                        <i class="fas fa-shield-alt"></i>
+                        سياسة الخصوصية
+                    </a>
+                </div>
+                <div class="developer-credit">
+                    <p>تم التطوير بواسطة 
+                        <a href="https://api.whatsapp.com/send/?phone=201035624486&text&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer" class="developer-link">
+                            <i class="fas fa-code"></i>
+                            المهندس محمد بهجت
+                        </a>
+                    </p>
+                </div>
             </div>
         </div>
     </footer>
+
+    <!-- Privacy Policy Modal -->
+    <div id="privacyModal" class="modal privacy-modal" role="dialog" aria-modal="true" aria-labelledby="privacyTitle">
+        <div class="modal-overlay" onclick="closePrivacyModal()"></div>
+        <div class="modal-container">
+            <button class="modal-close" onclick="closePrivacyModal()" aria-label="إغلاق النافذة">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="modal-header">
+                <i class="fas fa-shield-alt"></i>
+                <h2 id="privacyTitle">سياسة الخصوصية</h2>
+            </div>
+            <div class="modal-body">
+                <p>نحن نحترم خصوصيتك بالكامل. البيانات التي نقوم بجمعها (الاسم ورقم الهاتف) تُستخدم حصرياً لغرض واحد وهو التواصل معك لتأكيد حجزك في كورس المونتاج العقاري أو الرد على استفساراتك.</p>
+                <p>نحن نلتزم التام بعدم مشاركة، أو بيع، أو تأجير بياناتك الشخصية لأي طرف ثالث تحت أي ظرف.</p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-gold" onclick="closePrivacyModal()">
+                    <span class="btn-content">
+                        <i class="fas fa-check"></i>
+                        فهمت
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
 
     <script src="script.js" defer></script>
 </body>

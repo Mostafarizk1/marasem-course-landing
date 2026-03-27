@@ -456,10 +456,22 @@ function closeCertificate() {
     document.body.style.overflow = 'auto';
 }
 
-// Close modal with Escape key
+// ===== Privacy Policy Modal Functions =====
+function openPrivacyModal() {
+    document.getElementById('privacyModal').classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+function closePrivacyModal() {
+    document.getElementById('privacyModal').classList.remove('active');
+    document.body.style.overflow = 'auto';
+}
+
+// Close modals with Escape key
 document.addEventListener('keydown', function(e) {
     if (e.key === 'Escape') {
         closeCertificate();
+        closePrivacyModal();
     }
 });
 
