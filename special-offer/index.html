@@ -14,8 +14,8 @@
     <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
 
     <!-- Preload hero images for LCP -->
-    <link rel="preload" as="image" href="assets/hero-bg.webp" type="image/webp" media="(min-width: 768px)" fetchpriority="high">
-    <link rel="preload" as="image" href="assets/mobile.webp" type="image/webp" media="(max-width: 767px)" fetchpriority="high">
+    <link rel="preload" as="image" href="../assets/hero-bg.webp" type="image/webp" media="(min-width: 768px)" fetchpriority="high">
+    <link rel="preload" as="image" href="../assets/mobile.webp" type="image/webp" media="(max-width: 767px)" fetchpriority="high">
 
     <!-- Critical CSS: inlined to eliminate render-blocking -->
     <style>
@@ -62,15 +62,33 @@
     </style>
 
     <!-- Font Awesome Subset (local, 31 icons only — ~1.5KB vs 18.3KB CDN) -->
-    <link rel="stylesheet" href="fa-subset.css">
+    <link rel="stylesheet" href="../fa-subset.css">
 
     <!-- Cairo Font: async to avoid render-blocking -->
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
     <noscript><link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet"></noscript>
 
     <!-- styles.css: async load (non-blocking) -->
-    <link rel="preload" href="styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="styles.css"></noscript>
+    <link rel="preload" href="../styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="../styles.css"></noscript>
+
+    <!-- Facebook Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1250484713863859');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1250484713863859&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Facebook Pixel Code -->
 </head>
 <body>
 
@@ -91,9 +109,9 @@
     <header class="hero">
         <div class="hero-bg">
             <picture>
-                <source media="(max-width: 767px)" srcset="assets/mobile.webp" type="image/webp">
-                <source srcset="assets/hero-bg.webp" type="image/webp">
-                <img src="assets/hero-bg.jpg" alt="" fetchpriority="high" decoding="async" aria-hidden="true" style="width:100%;height:100%;object-fit:cover;display:block;">
+                <source media="(max-width: 767px)" srcset="../assets/mobile.webp" type="image/webp">
+                <source srcset="../assets/hero-bg.webp" type="image/webp">
+                <img src="../assets/hero-bg.jpg" alt="" fetchpriority="high" decoding="async" aria-hidden="true" style="width:100%;height:100%;object-fit:cover;display:block;">
             </picture>
         </div>
         <div class="hero-overlay"></div>
@@ -257,7 +275,7 @@
                         <div class="frame-corner top-right"></div>
                         <div class="frame-corner bottom-left"></div>
                         <div class="visual-content">
-                            <img src="assets/marasim-office.jpg" alt="مقر أكاديمية مراسم للتدريب والتطوير" width="500" height="500" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;border-radius:8px;display:block;">
+                            <img src="../assets/marasim-office.jpg" alt="مقر أكاديمية مراسم للتدريب والتطوير" width="500" height="500" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;border-radius:8px;display:block;">
                         </div>
                     </div>
                 </div>
@@ -302,10 +320,10 @@
                 <div class="instructor-image-wrapper reveal-up">
                     <div class="image-glow"></div>
                     <div class="instructor-photo">
-                        <img src="assets/profile.png" alt="مصطفى رزق - مصمم موشن جرافيك ومحرر فيديو" width="300" height="300" loading="lazy" decoding="async">
+                        <img src="../assets/profile.png" alt="مصطفى رزق - مصمم موشن جرافيك ومحرر فيديو" width="300" height="300" loading="lazy" decoding="async">
                     </div>
                     <div class="certificate-badge" onclick="openCertificate()" role="button" tabindex="0" aria-label="عرض شهادة Adobe المعتمدة بالحجم الكامل" style="cursor:pointer;" onkeydown="if(event.key==='Enter'||event.key===' ')openCertificate()">
-                        <img src="assets/certificate-adobe.jpg" alt="شهادة Adobe Certified Professional لمصطفى رزق" width="120" height="80" loading="lazy" decoding="async">
+                        <img src="../assets/certificate-adobe.jpg" alt="شهادة Adobe Certified Professional لمصطفى رزق" width="120" height="80" loading="lazy" decoding="async">
                         <span>اضغط للتكبير</span>
                     </div>
                 </div>
@@ -338,7 +356,7 @@
     <!-- Certificate Modal -->
     <div id="certificateModal" class="modal" role="dialog" aria-modal="true" aria-label="شهادة Adobe المعتمدة" onclick="closeCertificate()">
         <button class="modal-close" onclick="closeCertificate()" aria-label="إغلاق النافذة">&times;</button>
-        <img src="assets/certificate-adobe.jpg" alt="شهادة Adobe Certified Professional لمصطفى رزق" class="modal-content" loading="lazy" decoding="async">
+        <img src="../assets/certificate-adobe.jpg" alt="شهادة Adobe Certified Professional لمصطفى رزق" class="modal-content" loading="lazy" decoding="async">
     </div>
 
     <!-- Course Journey Timeline -->
@@ -815,6 +833,6 @@
         </div>
     </div>
 
-    <script src="script.js" defer></script>
+    <script src="../script.js" defer></script>
 </body>
 </html>
